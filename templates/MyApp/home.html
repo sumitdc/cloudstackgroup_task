@@ -1,0 +1,47 @@
+{% load static %}
+
+< !DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile Page</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+</head>
+<body style="background:black;">
+    <center>
+        <div class="container">
+    <h1 style="color:blue;">Personal Details</h1>
+    {% if data %}
+    <br>
+    {% for list in data %}
+
+        <p><h3 style="color:green;">First Name : {{ list.firstname }}</h3></p>
+        <p><h3 style="color:green;">last Name : {{ list.lastname }}</h3></p>
+        <p><h3 style="color:green;">Email-Id : {{ list.emailid }}</h3></p>
+
+<!--        <p><h3 style="color:yellow;">{{ list.password }}</h3></p>-->
+        <p><h3 style="color:green;">Password : {{ list.confirmpass }}</h3></p>
+        <p><h3 style="color:green;">Profile Image:</h3></p><br><br>
+    {% endfor %}
+
+    {% else %}
+    <h2 style="color:red;">NO RECORD FOUND...!</h2>
+
+    {% endif %}
+
+            </div>
+    </center>
+</body>
+</html>
+
+
+
